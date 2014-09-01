@@ -10,3 +10,4 @@ application/tests
 application/codeception.yml
 tests/_output/*
 vendor/
+build/

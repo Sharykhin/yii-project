@@ -2,6 +2,7 @@
     "require": {
         "phing/phing": "dev-master",
         "zhuravljov/yii2-debug": "dev-master",
-        "malyshev/yii-debug-toolbar": "dev-master"
+        "malyshev/yii-debug-toolbar": "dev-master",
+        "phpmd/phpmd": "2.0.*"
     }
 }
