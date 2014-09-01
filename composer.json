@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phing/phing": "dev-master",
+        "zhuravljov/yii2-debug": "dev-master",
+        "malyshev/yii-debug-toolbar": "dev-master"
+    }
+}

@@ -1,0 +1,12 @@
+.idea
+.idea/*
+node_modules/
+node_modules/*
+./*.xml
+protected/config/db.php
+resources/runtime
+vendor/
+application/tests
+application/codeception.yml
+tests/_output/*
+vendor/
