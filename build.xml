@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <project name="Yii" default="build" basedir=".">
+            <property name="output" location="${basedir}/build/" />
+
+            <target name="init, phpcs, phpmd"></target>
+
+            <target name="init">
+                <mkdir dir="${output}" />
+                <exec executable="composer">
+                    <arg line="install" />
+                </exec>
+            </target>
+
+            <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer">
+
+                <exec executable="./vendor/bin/phpcs" dir="${basedir}">
+                    <arg line=" --standard=${basedir}/phpcs.xml
+                                --report=checkstyle
+                                --report-file=${output}/checkstyle.xml
+                                ${basedir}/application" />
+                </exec>
+
+            </target>
+
+            <target name="phpmd" description="Perform project mess detection using PHPMD.">
+
+                <exec executable="./vendor/bin/phpmd" dir="${basedir}">
+
+                    <arg line="  ${basedir}/application
+                                 xml
+                                 ${basedir}/phpmd.xml
+                                 --reportfile ${output}/messdetector.xml " />
+
+                </exec>
+
+            </target>
+        </project>

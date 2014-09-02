@@ -1,9 +1,0 @@
-.idea
-.idea/*
-node_modules/
-node_modules/*
-./*.xml
-protected/config/db.php
-resources/runtime
-tests/_output/*
-vendor/
