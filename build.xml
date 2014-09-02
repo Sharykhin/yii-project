@@ -7,11 +7,14 @@
 
             <target name="init">
                 <mkdir dir="build/" />
+                <exec command="echo">
+                    <arg line=" 1234 " />
+                </exec>
             </target>
 
             <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" >
 
-                <exec executable="phpcs" dir="${basedir}">
+                <exec executable="${basedir}/vendor/bin/phpcs" dir="${basedir}">
                     <arg line=" --standard=${basedir}/phpcs.xml
                                 --report=checkstyle
                                 --report-file=${output}/checkstyle.xml
