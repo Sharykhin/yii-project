@@ -4,6 +4,7 @@
         "zhuravljov/yii2-debug": "dev-master",
         "malyshev/yii-debug-toolbar": "dev-master",
         "phpmd/phpmd": "2.0.*",
-        "instaclick/php-code-sniffer": "dev-master"
+        "instaclick/php-code-sniffer": "dev-master",
+        "sebastian/phpcpd": "2.0.*"
     }
 }

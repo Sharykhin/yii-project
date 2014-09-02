@@ -3,10 +3,10 @@
             <property name="basedir" value="." />
             <property name="output" value="${basedir}/build/" />
 
-            <target name="build" depends="init,phpcs,phpmd"></target>
+            <target name="build" depends="init,phpcs,phpmd,phpcpd"></target>
 
             <target name="init">
-                <mkdir dir="build/" />
+                <mkdir dir="${output}/" />
             </target>
 
             <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" >
@@ -31,5 +31,14 @@
 
                 </exec>
 
+            </target>
+
+            <target name="phpcpd" description="Find duplicate code using PHPCPD">
+                <exec executable="${basedir}/vendor/bin/phpcpd" dir="${basedir}">
+                    <arg line="
+                                --log-pmd ${output}/phpcpd.xml
+                                ${basedir}/application
+                                " />
+                </exec>
             </target>
         </project>
