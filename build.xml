@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-        <project name="Yii" default="build" basedir=".">
+        <project name="Yii" default="build" >
+            <property name="basedir" value="." />
+            <property name="output" value="${basedir}/build/" />
 
-            <property name="output" location="${basedir}/build/" />
-
-            <target name="build" depends="init,phpcs"></target>
+            <target name="build" depends="init,phpcs,phpmd"></target>
 
             <target name="init">
                 <mkdir dir="build/" />
@@ -14,7 +14,7 @@
                 <exec executable="${basedir}/vendor/bin/phpcs" dir="${basedir}">
                     <arg line=" --standard=${basedir}/phpcs.xml
                                 --report=checkstyle
-                                --report-file=${basedir}/checkstyle.xml
+                                --report-file=${output}/checkstyle.xml
                                 ${basedir}/application" />
                 </exec>
 
