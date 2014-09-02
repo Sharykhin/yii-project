@@ -6,7 +6,7 @@
             <target name="build" depends="init"></target>
 
             <target name="init">
-                <mkdir dir="${output}" />
+                <mkdir dir="build/" />
             </target>
 
             <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" >
