@@ -11,7 +11,7 @@
 
             <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" >
 
-                <exec executable="phpcs" dir="${basedir}/vendor/bin">
+                <exec executable="${basedir}/vendor/bin/phpcs" dir="${basedir}">
                     <arg line=" --standard=${basedir}/phpcs.xml
                                 --report=checkstyle
                                 --report-file=${basedir}/checkstyle.xml
@@ -20,16 +20,16 @@
 
             </target>
 
-            <!--<target name="phpmd" description="Perform project mess detection using PHPMD." >-->
+            <target name="phpmd" description="Perform project mess detection using PHPMD." >
 
-                <!--<exec executable="${basedir}/vendor/bin/phpmd" dir="${basedir}" >-->
+                <exec executable="${basedir}/vendor/bin/phpmd" dir="${basedir}" >
 
-                    <!--<arg line="  ${basedir}/application-->
-                                 <!--xml-->
-                                 <!--${basedir}/phpmd.xml-->
-                                 <!----reportfile ${output}/messdetector.xml " />-->
+                    <arg line="  ${basedir}/application
+                                 xml
+                                 ${basedir}/phpmd.xml
+                                 --reportfile ${output}/messdetector.xml " />
 
-                <!--</exec>-->
+                </exec>
 
-            <!--</target>-->
+            </target>
         </project>
