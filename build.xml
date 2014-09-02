@@ -6,15 +6,13 @@
 
             <target name="init">
                 <mkdir dir="${output}" />
-                <exec executable="composer">
-                    <arg line="install" />
-                </exec>
             </target>
 
             <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer">
 
-                <exec executable="./vendor/bin/phpcs" dir="${basedir}">
-                    <arg line=" --standard=${basedir}/phpcs.xml
+                <exec dir="${basedir}">
+                    <arg line="./vendor/bin/phpcs
+                                --standard=${basedir}/phpcs.xml
                                 --report=checkstyle
                                 --report-file=${output}/checkstyle.xml
                                 ${basedir}/application" />
@@ -24,9 +22,9 @@
 
             <target name="phpmd" description="Perform project mess detection using PHPMD.">
 
-                <exec executable="./vendor/bin/phpmd" dir="${basedir}">
+                <exec dir="${basedir}">
 
-                    <arg line="  ${basedir}/application
+                    <arg line="./vendor/bin/phpmd  ${basedir}/application
                                  xml
                                  ${basedir}/phpmd.xml
                                  --reportfile ${output}/messdetector.xml " />
