@@ -3,25 +3,22 @@
 
             <property name="output" location="${basedir}/build/" />
 
-            <target name="build" depends="init"></target>
+            <target name="build" depends="init,phpcs"></target>
 
             <target name="init">
                 <mkdir dir="build/" />
-                <exec command="echo">
-                    <arg line=" 1234 " />
-                </exec>
             </target>
 
-            <!--<target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" >-->
+            <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" >
 
-                <!--<exec executable="${basedir}/vendor/bin/phpcs" dir="${basedir}">-->
-                    <!--<arg line=" --standard=${basedir}/phpcs.xml-->
-                                <!----report=checkstyle-->
-                                <!----report-file=${output}/checkstyle.xml-->
-                                <!--${basedir}/application" />-->
-                <!--</exec>-->
+                <exec executable="${basedir}/vendor/bin/phpcs" dir="${basedir}">
+                    <arg line=" --standard=${basedir}/phpcs.xml
+                                --report=checkstyle
+                                --report-file=checkstyle.xml
+                                ${basedir}/application" />
+                </exec>
 
-            <!--</target>-->
+            </target>
 
             <!--<target name="phpmd" description="Perform project mess detection using PHPMD." >-->
 
