@@ -11,7 +11,7 @@
 
             <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" >
 
-                <exec executable="${basedir}/vendor/bin/phpcs" dir="${basedir}">
+                <exec executable="phpcs" dir="${basedir}">
                     <arg line=" --standard=${basedir}/phpcs.xml
                                 --report=checkstyle
                                 --report-file=${output}/checkstyle.xml
