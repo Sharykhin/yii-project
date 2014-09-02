@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-        <project name="Yii" default="build">
-            <property name="basedir" location="." />
+        <project name="Yii" default="build" basedir=".">
+
             <property name="output" location="${basedir}/build/" />
 
-            <target name="build" depends="init, phpcs, phpmd"></target>
+            <target name="build" depends="init"></target>
 
             <target name="init">
                 <mkdir dir="${output}" />
