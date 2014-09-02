@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-        <project name="Yii" default="build" basedir=".">
-            <property name="output" location="${basedir}/build/" />
+        <project name="Yii" default="init">
+            <property name="basedir" value="." />
+            <property name="output" value="${basedir}/build/" />
 
             <target name="init, phpcs, phpmd"></target>
 
@@ -8,11 +9,10 @@
                 <mkdir dir="${output}" />
             </target>
 
-            <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer">
+            <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" >
 
-                <exec dir="${basedir}">
-                    <arg line="./vendor/bin/phpcs
-                                --standard=${basedir}/phpcs.xml
+                <exec executable="${basedir}/vendor/bin/phpcs" dir="${basedir}">
+                    <arg line=" --standard=${basedir}/phpcs.xml
                                 --report=checkstyle
                                 --report-file=${output}/checkstyle.xml
                                 ${basedir}/application" />
@@ -20,11 +20,11 @@
 
             </target>
 
-            <target name="phpmd" description="Perform project mess detection using PHPMD.">
+            <target name="phpmd" description="Perform project mess detection using PHPMD." >
 
-                <exec dir="${basedir}">
+                <exec executable="${basedir}/vendor/bin/phpmd" dir="${basedir}" >
 
-                    <arg line="./vendor/bin/phpmd  ${basedir}/application
+                    <arg line="  ${basedir}/application
                                  xml
                                  ${basedir}/phpmd.xml
                                  --reportfile ${output}/messdetector.xml " />
