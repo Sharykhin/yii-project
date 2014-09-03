@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="yii" default="build">
+    <property name="project.application-name" value="Yii" />
+
+    <property name="project.environment" value="development" />
+
+    <property file="${project.basedir}/dev/phing/config/global.properties" />
+
+    <target name="build" depends="check-standards" />
+
+    <target name="php-code-sniffer" description="PHP CodeSniffer Standards Check">
+        <phing phingfile="${project.basedir}/dev/phing/tests/phpcs.xml" target="phpcs-tty"></phing>
+    </target>
+
+    <target name="php-lint" description="PHP lint">
+        <phing phingfile="${project.basedir}/dev/phing/tests/phplint.xml" target="phplint-dirs"></phing>
+    </target>
+
+    <target name="check-standards" description="PHP CodeSniffer and PHP lint" depends="php-lint, php-code-sniffer">
+    </target>
+
+</project>
