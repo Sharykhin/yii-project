@@ -14,11 +14,11 @@ if ($development || defined('APPLICATION_ENV') || getenv('APPLICATION_ENV') !== 
     define('YII_DEBUG', true);
     defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
     // путь к фреймворку Yii
-    $yii=dirname(__FILE__).'/../core/framework/yii.php';
+    $yii=dirname(__FILE__).'/../vendor/yiisoft/yii/framework/yii.php';
 
 } else { //production считается во всех случаях, когда не выполнены условия
     // путь к фреймворку Yii, при необходимости заменить на yii.php
-    $yii=dirname(__FILE__).'/../core/framework/yiilite.php';
+    $yii=dirname(__FILE__).'/../vendor/yiisoft/yii/framework/yiilite.php';
     // путь к основному конфигурационному файлу Yii
 }
 

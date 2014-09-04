@@ -4,9 +4,9 @@
 Yii::setPathOfAlias('base', dirname(__FILE__) . '/../../');
 Yii::setPathOfAlias('application', dirname(__FILE__) . '/../');
 Yii::setPathOfAlias('vendor', dirname(__FILE__) . '/../../vendor/');
-Yii::setPathOfAlias('core', dirname(__FILE__) . '/../../core/');
+Yii::setPathOfAlias('extensions', dirname(__FILE__) . '/../../extensions/');
 Yii::setPathOfAlias('public', dirname($_SERVER['SCRIPT_FILENAME']));
-Yii::setPathOfAlias('bootstrap',dirname(__FILE__).'/../../core/yii-bootstrap-2.1.0');
+Yii::setPathOfAlias('bootstrap',dirname(__FILE__).'/../../extensions/yii-bootstrap-2.1.0');
 
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',

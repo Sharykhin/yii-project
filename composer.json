@@ -5,6 +5,7 @@
         "malyshev/yii-debug-toolbar": "dev-master",
         "phpmd/phpmd": "2.0.*",
         "instaclick/php-code-sniffer": "dev-master",
-        "sebastian/phpcpd": "2.0.*"
+        "sebastian/phpcpd": "2.0.*",
+        "yiisoft/yii": "1.1.15"
     }
 }
