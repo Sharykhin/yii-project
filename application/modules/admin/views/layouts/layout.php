@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="imagetoolbar" content="no" />
     <?php echo Yii::app()->bootstrap->init(); ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/web/css/admin.css" />
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/web/plugins/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public/css/admin.css" />
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/public/plugins/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 <div class="container">

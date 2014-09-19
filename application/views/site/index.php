@@ -1,6 +1,6 @@
     <h1><?php echo Yii::t('app', 'Welcome to Grant\'s father.'); ?></h1>
     <a href="#" class="thumbnail" rel="tooltip" data-title="Tooltip">
-        <img class="logoGrants" src="/web/images/img1.jpg" alt="">
+        <img class="logoGrants" src="/public/images/img1.jpg" alt="">
     </a>
     <p class="desc">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.

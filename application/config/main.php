@@ -5,7 +5,7 @@ Yii::setPathOfAlias('base', dirname(__FILE__) . '/../../');
 Yii::setPathOfAlias('application', dirname(__FILE__) . '/../');
 Yii::setPathOfAlias('vendor', dirname(__FILE__) . '/../../vendor/');
 Yii::setPathOfAlias('extensions', dirname(__FILE__) . '/../../extensions/');
-Yii::setPathOfAlias('public', dirname($_SERVER['SCRIPT_FILENAME']));
+Yii::setPathOfAlias('public', dirname(__FILE__) . '/../../public/');
 Yii::setPathOfAlias('bootstrap',dirname(__FILE__).'/../../extensions/yii-bootstrap-2.1.0');
 
 return array(
@@ -19,7 +19,7 @@ return array(
     'preload'           => defined('YII_DEBUG')
                             && YII_DEBUG
                             && is_writable(Yii::getPathOfAlias('base').'/resources/runtime')
-                            && is_writable(Yii::getPathOfAlias('public.assets'))
+                            && is_writable(Yii::getPathOfAlias('base').'/public/assets')
                                 ? array('debug','log') : array(),
     'runtimePath' => Yii::getPathOfAlias('base').'/resources/runtime/',
 	// autoloading model and component classes
@@ -52,6 +52,10 @@ return array(
         'debug' => array(
 //            'class'   => 'core.yii2-debug.Yii2Debug',
             'class'=>'vendor.zhuravljov.yii2-debug.Yii2Debug'
+        ),
+        'assetManager'=>array(
+            'basePath'=>Yii::getPathOfAlias('public').'/assets',
+            'baseUrl'=>'/public/assets'
         ),
         'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap'
