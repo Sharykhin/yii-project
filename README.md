@@ -5,6 +5,15 @@ Installation
 
     Run: composer install
 
+Dev Installation
+----------------
+
+    Run: init.dev.sh
+
+    Run: composer install
+
+Dev Installation create all necessary directories exclude tests
+
 Go to application directory
 
     Run: php yiic migrate
