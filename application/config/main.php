@@ -6,7 +6,7 @@ Yii::setPathOfAlias('application', dirname(__FILE__) . '/../');
 Yii::setPathOfAlias('vendor', dirname(__FILE__) . '/../../vendor/');
 Yii::setPathOfAlias('extensions', dirname(__FILE__) . '/../../extensions/');
 Yii::setPathOfAlias('public', dirname(__FILE__) . '/../../public/');
-Yii::setPathOfAlias('bootstrap',dirname(__FILE__).'/../../extensions/yii-bootstrap-2.1.0');
+//Yii::setPathOfAlias('bootstrap',dirname(__FILE__).'/../../extensions/yii-bootstrap-2.1.0');
 
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
@@ -22,11 +22,21 @@ return array(
                             && is_writable(Yii::getPathOfAlias('base').'/public/assets')
                                 ? array('debug','log') : array(),
     'runtimePath' => Yii::getPathOfAlias('base').'/resources/runtime/',
+
+    'aliases' => array(
+        'base'=>dirname(__FILE__) . '/../../',
+        'application'=>dirname(__FILE__) . '/../',
+        'vendor'=>dirname(__FILE__) . '/../../vendor/',
+        'public'=>dirname(__FILE__) . '/../../public/',
+        'bootstrap' => realpath(__DIR__ . '/../../vendor/crisu83/yiistrap'), // change this if necessary
+    ),
+
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
         'application.modules.admin.components.*',
+        'bootstrap.helpers.TbHtml'
 	),
 	'modules'=>array(
 
@@ -58,7 +68,7 @@ return array(
             'baseUrl'=>'/public/assets'
         ),
         'bootstrap'=>array(
-            'class'=>'bootstrap.components.Bootstrap'
+            'class'=>'bootstrap.components.TbApi'
         ),
         'user'=>array(
             // enable cookie-based authentication

@@ -8,8 +8,7 @@
 	<!-- blueprint CSS framework -->
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public//css/print.css" media="print" />
-
-    <?php echo Yii::app()->bootstrap->init(); ?>
+    <?php Yii::app()->bootstrap->register(); ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public/css/main.css" />
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/public/js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/public/js/Helper.js"></script>

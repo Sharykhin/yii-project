@@ -28,10 +28,7 @@
 
     </p>
     <p style="text-align: center">
-    <?php $this->widget('bootstrap.widgets.TbButton', array(
-        'label'=>Yii::t('app','Start'),
-        'type'=>'success', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-        'size'=>'large', // null, 'large', 'small' or 'mini'
-        'htmlOptions'=>array('href'=>'/grunts/category'),
-    )); ?>
+        <?php echo TbHtml::button('Block button',
+            array('block' => true, 'color' => TbHtml::BUTTON_COLOR_PRIMARY, 'size'=>TbHtml::BUTTON_SIZE_LARGE));
+        ?>
     </p>
