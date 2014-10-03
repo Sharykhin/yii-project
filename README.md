@@ -19,4 +19,4 @@ If you want to use light rules, as default by Jenkins. Change in dev/phing/confi
 to ${project.basedir}/standards/phpcs.xml
 
 
-
+Documentation of YiiStrap: http://www.getyiistrap.com/
