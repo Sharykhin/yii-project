@@ -4,12 +4,12 @@
     <title>Admin</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="imagetoolbar" content="no" />
-    <?php echo Yii::app()->bootstrap->init(); ?>
+    <?php Yii::app()->bootstrap->register(); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public/css/admin.css" />
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/public/plugins/ckeditor/ckeditor.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <?php if(Yii::app()->user->checkAccess('ROLE_ADMIN') && !Yii::app()->user->isGuest) : ?>
     <?php $this->widget('bootstrap.widgets.TbNavbar', array(
         'type'=>'inverse', // null or 'inverse'
