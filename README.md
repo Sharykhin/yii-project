@@ -29,3 +29,4 @@ to ${project.basedir}/standards/phpcs.xml
 
 
 Documentation of YiiStrap: http://www.getyiistrap.com/
+Documentation of Bootstrap 2.3.2: http://getbootstrap.com/2.3.2/components.html#navbar

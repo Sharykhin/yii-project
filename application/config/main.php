@@ -13,7 +13,7 @@ return array(
     'charset'           => 'UTF-8',
     'language'          => 'ru',
     'sourceLanguage'    => 'en',
-	'name'=>'My Web Application',
+	'name'=>'Yii Box',
 
 	// preloading 'log' component
     'preload'           => defined('YII_DEBUG')

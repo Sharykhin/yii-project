@@ -1,34 +1,32 @@
-    <h1><?php echo Yii::t('app', 'Welcome to Grant\'s father.'); ?></h1>
-    <a href="#" class="thumbnail" rel="tooltip" data-title="Tooltip">
-        <img class="logoGrants" src="/public/images/img1.jpg" alt="">
-    </a>
-    <p class="desc">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type
-        specimen book. It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged.
-        It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-        Ipsum passages, and more recently with desktop publishing software like Aldus
-        PageMaker including versions of Lorem Ipsum.<br/>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type
-        specimen book. It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged.
-        It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-        Ipsum passages, and more recently with desktop publishing software like Aldus
-        PageMaker including versions of Lorem Ipsum.
-    </p>
-    <p class="desc">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type
-        specimen book. It has survived not only five centuries, but also the leap into
+<div class="content_top"></div>
 
-    </p>
-    <p style="text-align: center">
-        <?php echo TbHtml::button('Block button',
-            array('block' => true, 'color' => TbHtml::BUTTON_COLOR_PRIMARY, 'size'=>TbHtml::BUTTON_SIZE_LARGE));
-        ?>
-    </p>
+<div class="section_w480">
+    <h2><?php echo Yii::t('front','Welcome to Western Shop') ?></h2>
+
+    <img class="image_wrapper fr_image" src="<?php echo Yii::app()->request->baseUrl; ?>/public/images/templatemo_image_01.jpg" alt="image" />
+    <p>This <a href="http://www.Ftemplate.ru" target="_parent">CSS template</a> is provided by Ftemplate.ru for free of charge. Feel free to download, edit and apply this template for your websites. Credit goes to <a href="http://www.photovaco.com" target="_parent">Free Photos</a> for photos.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vitae ipsum vulputate varius vitae semper nunc. Quisque eget elit quis augue pharetra feugiat. Suspendisse turpis arcu, dignissim ac laoreet a, condimentum in massa. Sed condimentum lectus sed justo laoreet eget malesuada lectus luctus.</p>
+
+</div>
+
+<div class="cleaner_h30"></div>
+
+<div class="section_w480">
+    <h2>Our Featured Work</h2>
+
+    <h4><a href="#">Web Design Project</a></h4>
+    <img class="image_wrapper fl_image" src="<?php echo Yii::app()->request->baseUrl; ?>/public/images/templatemo_image_03.jpg" alt="image" />
+
+    <p>Etiam et metus quam. Maecenas egestas ipsum tempus mauris sodales non convallis arcu dictum. Duis vitae felis nec purus placerat mollis vel non lacus. Sed vehicula massa egestas lorem tincidunt gravida ut eu neque. Suspendisse ac mi urna, at sodales odio. Ut fermentum tristique metus, in hendrerit risus scelerisque et. <a href="#">Read more...</a></p>
+
+    <div class="cleaner_h20"></div>
+
+    <h4><a href="http://www.Ftemplate.ru" target="_parent">Free CSS  Template</a></h4>
+    <img class="image_wrapper fl_image" src="<?php echo Yii::app()->request->baseUrl; ?>/public/images/templatemo_image_02.jpg" alt="image" />
+
+    <p>Suspendisse ultricies purus pulvinar lorem adipiscing et elementum metus pellentesque. Integer turpis dolor, pharetra et semper vel, tempor vitae massa. Vestibulum ac nunc urna, ut posuere nisi. Quisque et fermentum magna. Nunc eget arcu eros, et molestie enim. Donec posuere risus tincidunt erat tempor mattis. <a href="#">Read more...</a></p>
+</div>
+
+
+<div class="cleaner"></div>
+<div class="content_bottom"></div>

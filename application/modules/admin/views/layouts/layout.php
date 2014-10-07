@@ -6,40 +6,42 @@
     <meta http-equiv="imagetoolbar" content="no" />
     <?php Yii::app()->bootstrap->register(); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public/css/admin.css" />
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/public/plugins/ckeditor/ckeditor.js"></script>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container">
     <?php if(Yii::app()->user->checkAccess('ROLE_ADMIN') && !Yii::app()->user->isGuest) : ?>
-    <?php $this->widget('bootstrap.widgets.TbNavbar', array(
-        'type'=>'inverse', // null or 'inverse'
-        'brand'=>Yii::app()->name,
-        'brandUrl'=>'/',
-        'collapse'=>true, // requires bootstrap-responsive.css
-        'items'=>array(
-            array(
-                'class'=>'bootstrap.widgets.TbMenu',
-                'items'=>array(
-                    array('label'=>Yii::t('admin','Dashboard'), 'url'=>'/admin/dashboard', 'active'=>true),
-                    array('label'=>Yii::t('admin','Management'), 'url'=>'#', 'items'=>array(
-                        array('label'=>Yii::t('admin','Users'), 'url'=>'/admin/users'),
-                    )),
-                ),
-            ),
-            '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
-            array(
-                'class'=>'bootstrap.widgets.TbMenu',
-                'htmlOptions'=>array('class'=>'pull-right'),
-                'items'=>array(
-                    array('label'=>Yii::app()->user->username, 'url'=>'#', 'items'=>array(
-                        array('label'=>Yii::t('admin','Logout'), 'url'=>'/logout'),
-                    )),
-                ),
-            ),
-        ),
-    )); ?>
+        <div class="row">
+            <div class="span12">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="/"><?php echo Yii::app()->name; ?></a>
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+                <div class="right-position">
+                <?php echo TbHtml::buttonDropdown(Yii::app()->user->username, array(
+                                                            array('label' => 'Action', 'url' => '#'),
+                                                            array('label' => 'Another action', 'url' => '#'),
+                                                            array('label' => 'Something else here', 'url' => '#'),
+                                                            TbHtml::menuDivider(),
+                                                            array('label' => Yii::t('admin','Logout'), 'url' => '/logout'),
+                                                            ),
+                                                            array('size'=>TbHtml::BUTTON_SIZE_DEFAULT,
+                                                                  )); ?>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+        <?php echo TbHtml::breadcrumbs(array(
+            'Dashboard'
+        )); ?>
+
     <?php endif; ?>
     <div style="height: 40px;"></div>
+
         <?php echo $content; ?>
 
 </div>

@@ -48,7 +48,9 @@
 
             <div class="buttons">
                 <?php echo TbHtml::button('Sign In',
-                    array('color' => TbHtml::BUTTON_COLOR_PRIMARY, 'size' => TbHtml::BUTTON_SIZE_LARGE));
+                    array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
+                           'size' => TbHtml::BUTTON_SIZE_LARGE,
+                            'type'=>'submit'));
                 ?>
 
             </div>
