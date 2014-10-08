@@ -2,7 +2,6 @@
 
 class UsersController extends AdminController
 {
-    public $layout ='/../../admin/views/layouts/layout';
 
 	/**
 	 * @return array action filters

@@ -6,6 +6,8 @@
 class DefaultController extends AdminController
 {
 
+
+
     /**
      * @method actionIndex() show login form, and make authentication
      */

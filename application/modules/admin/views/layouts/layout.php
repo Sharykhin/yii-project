@@ -16,20 +16,35 @@
             <div class="navbar-inner">
                 <a class="brand" href="/"><?php echo Yii::app()->name; ?></a>
                 <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <?php echo Yii::t('admin','Management'); ?>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href=""><span class="icon-user"></span> <?php echo Yii::t('admin','Users'); ?></a> </li>
+                        </ul>
+                    </li>
                     <li><a href="#">Link</a></li>
                 </ul>
+                <form class="navbar-search pull-left">
+                    <input type="text" class="search-query" placeholder="Search">
+                </form>
                 <div class="right-position">
-                <?php echo TbHtml::buttonDropdown(Yii::app()->user->username, array(
-                                                            array('label' => 'Action', 'url' => '#'),
-                                                            array('label' => 'Another action', 'url' => '#'),
-                                                            array('label' => 'Something else here', 'url' => '#'),
-                                                            TbHtml::menuDivider(),
-                                                            array('label' => Yii::t('admin','Logout'), 'url' => '/logout'),
-                                                            ),
-                                                            array('size'=>TbHtml::BUTTON_SIZE_DEFAULT,
-                                                                  )); ?>
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <?php echo Yii::app()->user->username ?>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/logout"><span class="icon-user"></span> <?php echo Yii::t('admin','Logout'); ?></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

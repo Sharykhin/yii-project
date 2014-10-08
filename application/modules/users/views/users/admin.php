@@ -31,38 +31,39 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </p>
 
 <div class="btn-toolbar">
-    <?php $this->widget('bootstrap.widgets.TbButtonGroup', array(
-        'type'=>'primary', // '', 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-        'buttons'=>array(
-            array('label'=>Yii::t('admin','Action'), 'items'=>$this->menu
-            ),
-        ),
-    )); ?>
+<!--    --><?php //$this->widget('bootstrap.widgets.TbButtonGroup', array(
+//        'type'=>'primary', // '', 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+//        'buttons'=>array(
+//            array('label'=>Yii::t('admin','Action'), 'items'=>$this->menu
+//            ),
+//        ),
+//    )); ?>
 </div>
 
 <?php echo CHtml::link(Yii::t('admin','Advanced Search'),'#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+<?php //$this->renderPartial('_search',array(
+//	'model'=>$model,
+//)); ?>
+</div>
+<!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
-	'id'=>'users-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'username',
-		'first_name',
-		'last_name',
-		'age',
-		/*
-		'sex',
-		'created',
-		*/
-		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
-		),
-	),
-)); ?>
+<?php //$this->widget('bootstrap.widgets.TbGridView',array(
+//	'id'=>'users-grid',
+//	'dataProvider'=>$model->search(),
+//	'filter'=>$model,
+//	'columns'=>array(
+//		'id',
+//		'username',
+//		'first_name',
+//		'last_name',
+//		'age',
+//		/*
+//		'sex',
+//		'created',
+//		*/
+//		array(
+//			'class'=>'bootstrap.widgets.TbButtonColumn',
+//		),
+//	),
+//)); ?>

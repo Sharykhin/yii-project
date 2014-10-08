@@ -5,11 +5,7 @@
  */
 class AdminController extends CController
 {
-    /**
-     * @var string the default layout for the controller view. Defaults to '//layouts/column1',
-     * meaning using a single column layout. See 'protected/views/layouts/column1.php'.
-     */
-    public $layout='/layouts/layout';
+  
     /**
      * @var array context menu items. This property will be assigned to {@link CMenu::items}.
      */
@@ -25,6 +21,21 @@ class AdminController extends CController
         Yii::app()->getMessages()->basePath=dirname(__FILE__).'/../../../i18n';
         parent::init();
 
+    }
+
+    public function filters()
+    {
+       return array(
+            array(
+                'application.modules.admin.components.AccessFilter - index'
+            )
+
+        );
+    }
+
+    public function getLayoutFile()
+    {
+        return dirname(__FILE__).'/../views/layouts/layout.php';
     }
 
 }

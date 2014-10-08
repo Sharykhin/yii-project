@@ -1,3 +1,5 @@
 .form-error {margin-left: 0px;}
 .sign-in-form   {margin: 20px auto;min-width: 300px; max-width: 600px;}
 .right-position {float: right;}
+.remember-me    {float: left;margin-right: 10px !important; width: 18px !important;height: 18px !important;}
+.offset-top-15  {margin-top: 15px;}
