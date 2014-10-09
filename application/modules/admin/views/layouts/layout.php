@@ -23,10 +23,10 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href=""><span class="icon-user"></span> <?php echo Yii::t('admin','Users'); ?></a> </li>
+                            <li><a href="/admin/users"><span class="icon-user"></span> <?php echo Yii::t('admin','Users'); ?></a> </li>
                         </ul>
                     </li>
-                    <li><a href="#">Link</a></li>
+                    <li><a href="/admin/dashboard"><?php echo Yii::t('admin','Dashboard'); ?></a></li>
                 </ul>
                 <form class="navbar-search pull-left">
                     <input type="text" class="search-query" placeholder="Search">
@@ -40,7 +40,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="/logout"><span class="icon-user"></span> <?php echo Yii::t('admin','Logout'); ?></a>
+                                    <a href="/logout"><span class="icon-off"></span> <?php echo Yii::t('admin','Logout'); ?></a>
                                 </li>
                             </ul>
                         </li>
@@ -50,9 +50,9 @@
         </div>
             </div>
         </div>
-        <?php echo TbHtml::breadcrumbs(array(
-            'Dashboard'
-        )); ?>
+<!--        --><?php //echo TbHtml::breadcrumbs(array(
+//            'Dashboard'
+//        )); ?>
 
     <?php endif; ?>
     <div style="height: 40px;"></div>

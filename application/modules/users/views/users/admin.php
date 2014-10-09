@@ -1,8 +1,4 @@
 <?php
-$this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
 	array('label'=>Yii::t('admin','Create User'),'url'=>array('create')),
@@ -22,6 +18,13 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
+<?php $this->widget('bootstrap.widgets.TbBreadcrumb', array(
+    'links' => array(
+        Yii::t('admin','Dashboard') => '/admin/dashboard',
+        Yii::t('admin','Users'),
+    ),
+)); ?>
+
 <h1><?php echo Yii::t('admin','Manage Users') ?></h1>
 
 <p>
@@ -31,39 +34,51 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </p>
 
 <div class="btn-toolbar">
-<!--    --><?php //$this->widget('bootstrap.widgets.TbButtonGroup', array(
-//        'type'=>'primary', // '', 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-//        'buttons'=>array(
-//            array('label'=>Yii::t('admin','Action'), 'items'=>$this->menu
-//            ),
-//        ),
-//    )); ?>
+    <?php echo TbHtml::buttonDropdown(Yii::t('admin','Action'), array(
+        array('label' => Yii::t('admin','Create'), 'url' => '/admin/users/create'),
+        array('label' => Yii::t('admin','List'), 'url' => '/admin/users/index'),
+    ), array('size'=>TbHtml::BUTTON_SIZE_LARGE,'color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+
+
 </div>
 
 <?php echo CHtml::link(Yii::t('admin','Advanced Search'),'#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">
-<?php //$this->renderPartial('_search',array(
-//	'model'=>$model,
-//)); ?>
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
 </div>
 <!-- search-form -->
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
+    'dataProvider' => $model->search(),
+    'id'=>'users-grid',
+    'filter' => $model,
+    'template' => "{items}",
+    'columns' => array(
+        array(
+            'name' => 'id',
+            'header' => 'ID',
+            'htmlOptions' => array('color' =>'width: 60px'),
+        ),
+        array(
+            'name' => 'username',
+            'header' => Yii::t('admin','Username'),
+        ),
+        array(
+            'name' => 'first_name',
+            'header' => Yii::t('admin','First Name'),
+        ),
+        array(
+            'name' => 'last_name',
+            'header' => Yii::t('admin','Last Name'),
+        ),
+        array(
+            'name'=>'age',
+            'header'=>Yii::t('admin','Age')
+        ),
+        array(
+			'class'=>'bootstrap.widgets.TbButtonColumn',
+		),
+    ),
+)); ?>
 
-<?php //$this->widget('bootstrap.widgets.TbGridView',array(
-//	'id'=>'users-grid',
-//	'dataProvider'=>$model->search(),
-//	'filter'=>$model,
-//	'columns'=>array(
-//		'id',
-//		'username',
-//		'first_name',
-//		'last_name',
-//		'age',
-//		/*
-//		'sex',
-//		'created',
-//		*/
-//		array(
-//			'class'=>'bootstrap.widgets.TbButtonColumn',
-//		),
-//	),
-//)); ?>

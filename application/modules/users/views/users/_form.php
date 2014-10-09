@@ -10,28 +10,29 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<?php echo $form->textFieldRow($model,'username',array('class'=>'span5','maxlength'=>255)); ?>
+	<?php echo $form->textFieldControlGroup($model,'username',array('class'=>'span5','maxlength'=>255)); ?>
+    <?php if(Yii::app()->controller->action->id !== 'update') { ?>
 
-	<?php echo $form->passwordFieldRow($model,'password',array('class'=>'span5','maxlength'=>255)); ?>
+	    <?php echo $form->passwordField($model,'password',array('class'=>'span5','maxlength'=>255)); ?>
 
-	<?php echo $form->textFieldRow($model,'first_name',array('class'=>'span5','maxlength'=>50)); ?>
+    <?php } ?>
 
-	<?php echo $form->textFieldRow($model,'last_name',array('class'=>'span5','maxlength'=>50)); ?>
+	<?php echo $form->textFieldControlGroup($model,'first_name',array('class'=>'span5','maxlength'=>50)); ?>
 
-	<?php echo $form->textFieldRow($model,'age',array('class'=>'span5')); ?>
+	<?php echo $form->textFieldControlGroup($model,'last_name',array('class'=>'span5','maxlength'=>50)); ?>
 
-    <?php echo $form->dropDownListRow($model, 'sex', array('male'=>Yii::t('admin','male'), 'female'=>Yii::t('admin','female'), 'none')); ?>
+	<?php echo $form->textFieldControlGroup($model,'age',array('class'=>'span5')); ?>
+
+    <?php echo $form->dropDownListControlGroup($model, 'sex', array('male'=>Yii::t('admin','male'), 'female'=>Yii::t('admin','female'), 'none')); ?>
 
     <?php if(Yii::app()->user->checkAccess('ROLE_SUPERADMIN')) : ?>
-        <?php echo $form->dropDownListRow($model, 'role', array('ROLE_USER', 'ROLE_ADMIN','ROLE_SUPERADMIN')); ?>
+        <?php echo $form->dropDownListControlGroup($model, 'role', array('ROLE_USER', 'ROLE_ADMIN','ROLE_SUPERADMIN')); ?>
     <?php endif; ?>
 
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-			'buttonType'=>'submit',
-			'type'=>'primary',
-			'label'=>$model->isNewRecord ? Yii::t('admin','Create') : Yii::t('admin','Save'),
-		)); ?>
-	</div>
+
+        <?php echo TbHtml::button($model->isNewRecord ? Yii::t('admin','Create') : Yii::t('admin','Save'), array(
+                    'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+                    'type'=>'submit')); ?>
+
 
 <?php $this->endWidget(); ?>

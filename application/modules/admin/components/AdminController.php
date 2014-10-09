@@ -5,7 +5,7 @@
  */
 class AdminController extends CController
 {
-  
+
     /**
      * @var array context menu items. This property will be assigned to {@link CMenu::items}.
      */

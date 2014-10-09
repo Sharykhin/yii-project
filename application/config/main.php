@@ -2,11 +2,8 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 Yii::setPathOfAlias('base', dirname(__FILE__) . '/../../');
-Yii::setPathOfAlias('application', dirname(__FILE__) . '/../');
-Yii::setPathOfAlias('vendor', dirname(__FILE__) . '/../../vendor/');
-Yii::setPathOfAlias('extensions', dirname(__FILE__) . '/../../extensions/');
 Yii::setPathOfAlias('public', dirname(__FILE__) . '/../../public/');
-//Yii::setPathOfAlias('bootstrap',dirname(__FILE__).'/../../extensions/yii-bootstrap-2.1.0');
+
 
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
@@ -24,10 +21,8 @@ return array(
     'runtimePath' => Yii::getPathOfAlias('base').'/resources/runtime/',
 
     'aliases' => array(
-        'base'=>dirname(__FILE__) . '/../../',
         'application'=>dirname(__FILE__) . '/../',
         'vendor'=>dirname(__FILE__) . '/../../vendor/',
-        'public'=>dirname(__FILE__) . '/../../public/',
         'bootstrap' => realpath(__DIR__ . '/../../vendor/crisu83/yiistrap'), // change this if necessary
     ),
 

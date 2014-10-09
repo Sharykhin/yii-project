@@ -116,6 +116,10 @@ class Users extends CActiveRecord
 
     protected function beforeSave(){
         $this->password = crypt($this->password);
+        if(Yii::app()->controller->action->id === 'create') {
+            $date = new DateTime();
+            $this->created = $date->format('Y-m-d');
+        }
         return parent::beforeSave();
     }
 }
