@@ -68,6 +68,7 @@ class Users extends CActiveRecord
 			'age' => Yii::t('admin','Age'),
 			'sex' => Yii::t('admin','Sex'),
 			'created' => Yii::t('admin','Created'),
+            'role'=>Yii::t('admin','Role'),
 		);
 	}
 

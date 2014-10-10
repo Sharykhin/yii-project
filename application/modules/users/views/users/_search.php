@@ -17,9 +17,11 @@
 
 	<?php echo $form->textFieldControlGroup($model,'created',array('class'=>'span5')); ?>
 
-	<div class="form-actions">
-        <?php echo TbHtml::button(Yii::t('admin','Search'), array('color' => TbHtml::BUTTON_COLOR_PRIMARY,'type'=>'submit')); ?>
 
-	</div>
+    <?php echo TbHtml::button(Yii::t('admin','Search'), array('color' => TbHtml::BUTTON_COLOR_PRIMARY,'type'=>'submit')); ?>
+
+    <?php echo TbHtml::button(Yii::t('admin','Clear'), array('color' => TbHtml::BUTTON_COLOR_INFO,'type'=>'reset')); ?>
+
+
 
 <?php $this->endWidget(); ?>

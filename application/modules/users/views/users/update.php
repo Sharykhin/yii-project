@@ -14,7 +14,9 @@
             array('label' => Yii::t('admin','Create'), 'url' => '/admin/users/create'),
             array('label' => Yii::t('admin','List'), 'url' => '/admin/users/index'),
             TbHtml::menuDivider(),
-            array('label' => Yii::t('admin','Delete'), 'url' => '/admin/users/delete','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t('admin','Are you sure you want to delete this item?'))),
+            ($model->role !== 'ROLE_SUPERADMIN')
+                ? array('label' => Yii::t('admin','Delete'), 'url' => '/admin/users/delete','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t('admin','Are you sure you want to delete this item?')))
+                : array(),
         ), array('size'=>TbHtml::BUTTON_SIZE_LARGE,'color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 
     </div>

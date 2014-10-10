@@ -77,7 +77,15 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
             'header'=>Yii::t('admin','Age')
         ),
         array(
+
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+            'template'=>'{view} {update} {delete}',
+            'buttons'=>array(
+                'delete'=>array(
+                    'visible'=>'$data->role !== "ROLE_SUPERADMIN"',
+                )
+
+            )
 		),
     ),
 )); ?>

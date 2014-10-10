@@ -26,7 +26,7 @@
     <?php echo $form->dropDownListControlGroup($model, 'sex', array('male'=>Yii::t('admin','male'), 'female'=>Yii::t('admin','female'), 'none')); ?>
 
     <?php if(Yii::app()->user->checkAccess('ROLE_SUPERADMIN')) : ?>
-        <?php echo $form->dropDownListControlGroup($model, 'role', array('ROLE_USER', 'ROLE_ADMIN','ROLE_SUPERADMIN')); ?>
+        <?php echo $form->dropDownListControlGroup($model, 'role', array('ROLE_USER'=>'ROLE_USER', 'ROLE_ADMIN'=>'ROLE_ADMIN','ROLE_SUPERADMIN'=>'ROLE_SUPERADMIN')); ?>
     <?php endif; ?>
 
 

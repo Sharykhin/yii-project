@@ -64,6 +64,7 @@ class UsersController extends AdminController
 		if(isset($_POST['Users']))
 		{
 			$model->attributes=$_POST['Users'];
+            $model->role = $_POST['Users']['role'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -88,6 +89,7 @@ class UsersController extends AdminController
 		if(isset($_POST['Users']))
 		{
 			$model->attributes=$_POST['Users'];
+            $model->role = $_POST['Users']['role'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -97,12 +99,11 @@ class UsersController extends AdminController
 		));
 	}
 
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
+    /**
+     * @param $id
+     * @throws CHttpException
+     */
+    public function actionDelete($id)
 	{
 		if(Yii::app()->request->isPostRequest)
 		{
