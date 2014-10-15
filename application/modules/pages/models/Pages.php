@@ -1,27 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "pages".
  *
- * The followings are the available columns in table 'users':
- * @property string $id
- * @property string $username
- * @property string $password
- * @property string $first_name
- * @property string $last_name
- * @property integer $age
- * @property string $sex
- * @property string $created
- * @property string $role
+ * The followings are the available columns in table 'pages':
+ * @property integer $id
+ * @property string $url
+ * @property string $content
+ * @property string $title
+ * @property string $date_created
+ * @property string $date_modified
  */
-class Users extends CActiveRecord
+class Pages extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'pages';
 	}
 
 	/**
@@ -32,14 +29,11 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password', 'required'),
-			array('age', 'numerical', 'integerOnly'=>true),
-			array('username, password', 'length', 'max'=>255),
-			array('first_name, last_name', 'length', 'max'=>50),
-			array('sex', 'length', 'max'=>6),
+			array('content, title, date_created, date_modified', 'required'),
+			array('url, title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, first_name, last_name, age, sex, created', 'safe', 'on'=>'search'),
+			array('id, url, content, title, date_created, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,14 +55,11 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => Yii::t('admin','Username'),
-			'password' => Yii::t('admin','Password'),
-			'first_name' => Yii::t('admin','First Name'),
-			'last_name' => Yii::t('admin','Last Name'),
-			'age' => Yii::t('admin','Age'),
-			'sex' => Yii::t('admin','Sex'),
-			'created' => Yii::t('admin','Created'),
-            'role'=>Yii::t('admin','Role'),
+			'url' => 'Url',
+			'content' => 'Content',
+			'title' => 'Title',
+			'date_created' => 'Date Created',
+			'date_modified' => 'Date Modified',
 		);
 	}
 
@@ -90,14 +81,12 @@ class Users extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('last_name',$this->last_name,true);
-		$criteria->compare('age',$this->age);
-		$criteria->compare('sex',$this->sex,true);
-		$criteria->compare('created',$this->created,true);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('url',$this->url,true);
+		$criteria->compare('content',$this->content,true);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('date_created',$this->date_created,true);
+		$criteria->compare('date_modified',$this->date_modified,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -108,19 +97,10 @@ class Users extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return Pages the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-
-    protected function beforeSave(){
-        if(Yii::app()->controller->action->id === 'create') {
-            $this->password = crypt($this->password);
-            $date = new DateTime();
-            $this->created = $date->format('Y-m-d');
-        }
-        return parent::beforeSave();
-    }
 }

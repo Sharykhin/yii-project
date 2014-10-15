@@ -1,5 +1,6 @@
 <?php
-return array(
+$translations =
+ array(
     'Content'=>'Содержимое',
     'Incorrect username or password.'=>'Неверный логин или пароль',
     'Remember me next time'=>'Запомнить меня',
@@ -74,3 +75,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 
 
 );
+
+$modulePath = dirname(__FILE__).'/../../modules';
+$modules = scandir($modulePath);
+foreach($modules as $module) :
+    if(file_exists($modulePath.'/'.$module.'/i18n/ru/admin.php') && ($module !== '.' && $module !== '..')){
+        $translations = array_merge(require $modulePath.'/'.$module.'/i18n/ru/admin.php',$translations);
+    }
+endforeach;
+
+return  $translations;

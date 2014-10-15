@@ -50,6 +50,7 @@ return array(
         'users'=>array(
             'class'=>'application.modules.users.UsersModule'
         ),
+        'pages'
 
 	),
    	// application components

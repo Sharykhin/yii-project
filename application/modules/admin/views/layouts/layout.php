@@ -24,6 +24,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="/admin/users"><span class="icon-user"></span> <?php echo Yii::t('admin','Users'); ?></a> </li>
+                            <li><a href="/admin/pages"><span class="icon-list-alt"></span> <?php echo Yii::t('admin','Pages'); ?></a> </li>
                         </ul>
                     </li>
                     <li><a href="/admin/dashboard"><?php echo Yii::t('admin','Dashboard'); ?></a></li>
