@@ -21,7 +21,7 @@
 
             <?php echo $form->textFieldControlGroup($model,'url',array('span'=>5,'maxlength'=>255)); ?>
 
-            <?php echo $form->textAreaControlGroup($model,'content',array('rows'=>6,'span'=>8)); ?>
+            <?php echo $form->textAreaControlGroup($model,'content',array('rows'=>6,'span'=>8,'id'=>'editor')); ?>
 
             <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>255)); ?>
 
