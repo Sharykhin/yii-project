@@ -9,8 +9,7 @@
     ),
 )); ?>
 
-<h1>
-    <?php echo Yii::t('admin','Create User') ?></h1>
+<h1><?php echo Yii::t('admin','Create User') ?></h1>
 <div class="btn-toolbar">
 
     <?php echo TbHtml::buttonDropdown(Yii::t('admin','Action'), array(

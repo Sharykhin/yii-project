@@ -28,7 +28,10 @@ $this->menu=array(
     'attributes'=>array(
 		'id',
 		'url',
-		'content',
+        array(
+            'name'=>'content',
+            'type' => 'raw',
+        ),
 		'title',
 		'date_created',
 		'date_modified',

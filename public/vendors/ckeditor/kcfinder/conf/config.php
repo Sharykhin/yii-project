@@ -22,7 +22,7 @@ $_CONFIG = array(
 // GENERAL SETTINGS
 
     'disabled' => false,
-    'uploadURL' => "uploads",
+    'uploadURL' => "/public/uploads",
     'uploadDir' => dirname(__FILE__)."/../../../../uploads",
     'theme' => "default",
 
