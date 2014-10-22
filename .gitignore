@@ -9,3 +9,5 @@ vendor/
 tests/_output/*
 vendor/
 build/
+public/uploads/images/*
+public/uploads/.thumbs/*

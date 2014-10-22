@@ -39,7 +39,6 @@
     <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/public/vendor/ckeditor/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('editor');
 </script>

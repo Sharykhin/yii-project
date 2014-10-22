@@ -21,9 +21,9 @@ $_CONFIG = array(
 
 // GENERAL SETTINGS
 
-    'disabled' => true,
+    'disabled' => false,
     'uploadURL' => "uploads",
-    'uploadDir' => "uploads",
+    'uploadDir' => dirname(__FILE__)."/../../../../uploads",
     'theme' => "default",
 
     'types' => array(

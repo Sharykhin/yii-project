@@ -25,22 +25,22 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'colors' },
 		{ name: 'about' }
 	];
-
+    var basePath = '/public/vendors/ckeditor/kcfinder';
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Underline,Subscript,Superscript';
 
-    config.filebrowserImageBrowseUrl ='/public/vendor/ckeditor/kcfinder/browse.php?type=images';
+    config.filebrowserImageBrowseUrl =basePath +'/browse.php?type=images';
 
-    config.filebrowserBrowseUrl = '/public/vendor/ckeditor/kcfinder/browse.php?type=files';
+    config.filebrowserBrowseUrl = basePath +'/browse.php?type=files';
 
-    config.filebrowserFlashBrowseUrl='/public/vendor/ckeditor/kcfinder/browse.php?type=flash';
+    config.filebrowserFlashBrowseUrl= basePath + '/browse.php?type=flash';
 
-    config.filebrowserUploadUrl = '/public/vendor/ckeditor/kcfinder/upload.php?type=files';
+    config.filebrowserUploadUrl = basePath +'/upload.php?type=files';
 
-    config.filebrowserImageUploadUrl ='/public/vendor/ckeditor/kcfinder/upload.php?type=images';
+    config.filebrowserImageUploadUrl = basePath + '/upload.php?type=images';
 
-    config.filebrowserFlashUploadUrl = '/public/vendor/ckeditor/kcfinder/upload.php?type=flash';
+    config.filebrowserFlashUploadUrl =  basePath +'/upload.php?type=flash';
 
 	// Set the most common block elements.
 	config.format_tags = 'p;h1;h2;h3;pre';

@@ -69,7 +69,7 @@ class PagesController extends AdminController
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
-
+        Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/public/vendors/ckeditor/ckeditor.js',CClientScript::POS_HEAD);
 		$this->render('create',array(
 			'model'=>$model,
 		));
