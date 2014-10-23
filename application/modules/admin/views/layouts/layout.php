@@ -6,6 +6,9 @@
     <meta http-equiv="imagetoolbar" content="no" />
     <?php Yii::app()->bootstrap->register(); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public/css/admin.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public/vendors/bootstrap-datepicker/css/datepicker.css" />
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/public/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 </head>
 <body>
 <div class="container">

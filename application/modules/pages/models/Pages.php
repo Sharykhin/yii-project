@@ -56,10 +56,10 @@ class Pages extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'url' => 'Url',
-			'content' => 'Content',
-			'title' => 'Title',
-			'date_created' => 'Date Created',
-			'date_modified' => 'Date Modified',
+			'content' => Yii::t('admin','Content'),
+			'title' => Yii::t('admin','Title'),
+			'date_created' => Yii::t('admin','Date Created'),
+			'date_modified' =>Yii::t('admin','Date Modified'),
 		);
 	}
 

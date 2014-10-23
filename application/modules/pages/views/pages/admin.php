@@ -33,17 +33,27 @@ $('.search-form form').submit(function(){
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.') ?>
 
 </p>
+<div class="row">
+    <div class="span2">
 
-    <div class="btn-toolbar">
-        <?php echo TbHtml::buttonDropdown(Yii::t('admin','Action'), array(
-            array('label' => Yii::t('admin','Create'), 'url' => array('create')),
-            array('label' => Yii::t('admin','List'), 'url' => array('index')),
-        ), array('size'=>TbHtml::BUTTON_SIZE_LARGE,'color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
-
+            <?php echo TbHtml::buttonDropdown(Yii::t('admin','Action'), array(
+                array('label' => Yii::t('admin','Create'), 'url' => array('create')),
+                array('label' => Yii::t('admin','List'), 'url' => array('index')),
+            ), array('size'=>TbHtml::BUTTON_SIZE_DEFAULT,'color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 
     </div>
 
-<?php echo CHtml::link(Yii::t('admin','Advanced Search'),'#',array('class'=>'search-button btn')); ?>
+    <div class="span2">
+        <?php echo CHtml::link(Yii::t('admin','Advanced Search'),'#',array('class'=>'search-button btn')); ?>
+    </div>
+
+    <div class="span2">
+        <?php echo CHtml::link(Yii::t('admin','Clear Filter'),'#',array('class'=>'btn btn-info','id'=>'form-reset-button')); ?>
+    </div>
+
+</div>
+
+
 
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
@@ -55,22 +65,55 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'pages-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+    'emptyText'=>'There are no pages',
 	'columns'=>array(
 		'id',
 		'url',
         array(
             'name'=>'content',
-            'header'=>'Content',
+            'header'=>Yii::t('admin','Content'),
             'value'=>function($item){
                    return $this->words_limit($item->content,50,'...') ;
-                }
+            }
         ),
 
 		'title',
-		'date_created',
-		'date_modified',
+        array(
+          'name'=>'date_created',
+          'header'=>Yii::t('admin','Date Created'),
+          'value'=>function($item) {
+                  $date = new DateTime($item->date_created);
+                  return $date->format("d/m/Y");
+          },
+
+        ),
+        array(
+            'name'=>'date_modified',
+            'header'=>Yii::t('admin','Date Modified'),
+            'value'=>function($item) {
+                    $date = new DateTime($item->date_modified);
+                    return $date->format("d/m/Y");
+                },
+            'filter'=>Chtml::textField('Pages[date_modified]','',array(
+                    'data-provide'=>'datepicker','data-date-format'=>'dd/mm/yyyy'
+                ))
+        ),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
 	),
 )); ?>
+
+<script>
+    $('#form-reset-button').click(function()
+    {
+        var id='pages-grid';
+        var inputSelector='#'+id+' .filters input, '+'#'+id+' .filters select';
+        $(inputSelector).each( function(i,o) {
+            $(o).val('');
+        });
+        var data=$.param($(inputSelector));
+        $.fn.yiiGridView.update(id, {data: data});
+        return false;
+    });
+</script>
