@@ -15,30 +15,25 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
+    <p class="help-block">
+        <?php echo Yii::t('admin','Fields with {span} are required.',array('{span}'=>'<span class="required">*</span>')); ?>
+    </p>
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'url',array('span'=>5,'maxlength'=>255)); ?>
+            <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>255,'class'=>'title-field')); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'url',array('span'=>5,'maxlength'=>255,'class'=>'url-field')); ?>
 
             <?php echo $form->textAreaControlGroup($model,'content',array('rows'=>6,'span'=>8,'id'=>'editor')); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>255)); ?>
-
-            <?php echo $form->textFieldControlGroup($model,'date_created',array('span'=>5)); ?>
-
-            <?php echo $form->textFieldControlGroup($model,'date_modified',array('span'=>5)); ?>
-
-        <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
-		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
-		)); ?>
-    </div>
+    <?php echo TbHtml::button($model->isNewRecord ? Yii::t('admin','Create') : Yii::t('admin','Save'), array(
+        'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+        'type'=>'submit')); ?>
 
     <?php $this->endWidget(); ?>
 
 </div><!-- form -->
 <script>
-    CKEDITOR.replace('editor');
+
 </script>

@@ -70,6 +70,7 @@ class PagesController extends AdminController
 			}
 		}
         Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/public/vendors/ckeditor/ckeditor.js',CClientScript::POS_HEAD);
+        Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/public/js/modules/pages/pages.js',CClientScript::POS_END);
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -93,7 +94,8 @@ class PagesController extends AdminController
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
-
+        Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/public/vendors/ckeditor/ckeditor.js',CClientScript::POS_HEAD);
+        Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/public/js/modules/pages/pages.js',CClientScript::POS_END);
 		$this->render('update',array(
 			'model'=>$model,
 		));
@@ -106,6 +108,7 @@ class PagesController extends AdminController
 	 */
 	public function actionDelete($id)
 	{
+
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
@@ -140,6 +143,8 @@ class PagesController extends AdminController
 		if (isset($_GET['Pages'])) {
 			$model->attributes=$_GET['Pages'];
 		}
+
+
 
 		$this->render('admin',array(
 			'model'=>$model,

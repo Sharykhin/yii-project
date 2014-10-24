@@ -17,7 +17,7 @@
     <?php echo TbHtml::buttonDropdown(Yii::t('admin','Action'), array(
         array('label' => Yii::t('admin','Management'), 'url' => array('admin')),
         array('label' => Yii::t('admin','List'), 'url' => array('index')),
-    ), array('size'=>TbHtml::BUTTON_SIZE_LARGE,'color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+    ), array('size'=>TbHtml::BUTTON_SIZE_DEFAULT,'color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 </div>
 

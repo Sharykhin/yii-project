@@ -29,7 +29,7 @@ class Pages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content, title, date_created, date_modified', 'required'),
+			array('content, title', 'required'),
 			array('url, title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -103,4 +103,14 @@ class Pages extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    protected function beforeSave()
+    {
+        $date = new DateTime();
+        if(Yii::app()->controller->action->id === 'create') {
+            $this->date_created = $date->format('Y-m-d');
+        }
+        $this->date_modified= $date->format('Y-m-d');
+        return parent::beforeSave();
+    }
 }

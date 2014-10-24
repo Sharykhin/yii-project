@@ -19,9 +19,9 @@
 
         <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>255)); ?>
 
-        <?php echo $form->textFieldControlGroup($model,'date_created',array('span'=>5,'data-provide'=>'datepicker','data-date-format'=>'dd/mm/yyyy')); ?>
+        <?php echo $form->textFieldControlGroup($model,'date_created',array('span'=>5,'data-provide'=>'datepicker')); ?>
 
-        <?php echo $form->textFieldControlGroup($model,'date_modified',array('span'=>5,'data-provide'=>'datepicker','data-date-format'=>'dd/mm/yyyy')); ?>
+        <?php echo $form->textFieldControlGroup($model,'date_modified',array('span'=>5,'data-provide'=>'datepicker')); ?>
 
         <?php echo TbHtml::button(Yii::t('admin','Search'), array('color' => TbHtml::BUTTON_COLOR_PRIMARY,'type'=>'submit')); ?>
 

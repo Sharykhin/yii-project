@@ -4,5 +4,7 @@ return array(
     'Manage Pages'=>'Управление страницами',
     'Create Pages'=>'Создание страницы',
     'Date Created'=>'Дата создания',
-    'Date Modified'=>'Дата редактирования'
+    'Date Modified'=>'Дата редактирования',
+    'View Page'=>'Просмотр страницы',
+    'Update Page'=>'Обновление страницы'
 );

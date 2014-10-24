@@ -7,7 +7,7 @@ $translations =
     'Sign In Form'=>'Форма входа',
     'Sign In'=>'Войти',
     'Please fill out the following form with your login credentials'=>'Пожалуйста, заполните поля, используя ваши данные для входа',
-    'Fields with <span class="required">*</span> are required.'=>'Поля отмеченные <span class="required">*</span> обязательны.',
+    'Fields with {span} are required.'=>'Поля отмеченные {span} обязательны.',
     'Dashboard'=>'Панель управления',
     'Username'=>'Логин',
     'Password'=>'Пароль',

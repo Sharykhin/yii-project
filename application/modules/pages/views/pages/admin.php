@@ -71,6 +71,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'url',
         array(
             'name'=>'content',
+            'type'=>'raw',
             'header'=>Yii::t('admin','Content'),
             'value'=>function($item){
                    return $this->words_limit($item->content,50,'...') ;
@@ -105,15 +106,5 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 
 <script>
-    $('#form-reset-button').click(function()
-    {
-        var id='pages-grid';
-        var inputSelector='#'+id+' .filters input, '+'#'+id+' .filters select';
-        $(inputSelector).each( function(i,o) {
-            $(o).val('');
-        });
-        var data=$.param($(inputSelector));
-        $.fn.yiiGridView.update(id, {data: data});
-        return false;
-    });
+    Helper.clearFilter('pages-grid');
 </script>

@@ -3,9 +3,8 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="help-block">
-        <?php echo Yii::t('admin','Fields with <span class="required">*</span> are required.'); ?>
-
+    <p class="help-block">
+        <?php echo Yii::t('admin','Fields with {span} are required.',array('{span}'=>'<span class="required">*</span>')); ?>
     </p>
 
 	<?php echo $form->errorSummary($model); ?>
